@@ -1,5 +1,28 @@
 #include "containers.h"
 
+containers::containers()  {
+    srand(time(0));
+}
+
+template<typename T>
+inline void containers::generateAccessNumbers(int numNumbers, T container)
+{
+    int len = container.size(), randPos;
+    std::uniform_int_distribution<> distrib(0, len);
+    for (int i = 0; i < len; i++) {
+        randPos = rand() % len;
+        if (randPos >= len)
+            randPos = len - 1;
+        this->randomElements.emplace_back(randPos);
+    }
+}
+
+void containers::setRandomNumbers(const std::vector<int>& nums)
+{
+    this->randomElements.clear();
+    this->randomElements = {nums.cbegin(), nums.cend()};
+}
+
 void containers::printTimes(const std::vector<double>& times) {
     int pos = 0;
     for (const double& time : times) {
@@ -18,16 +41,4 @@ void containers::printTimes(const std::vector<double>& times) {
         pos++;
     }
     std::cout << "\n";
-}
-
-// Make sfinae must cotain a .function() parameter
-template<typename T>
-void containers::insertElements(T myContainer) {
-    begin = std::chrono::steady_clock::now();
-    T::iterator iter;
-    for (const int& number : randomElements)
-    {
-        iter = myList.end();
-        myList.insert(iter, number);
-    }
 }

@@ -14,22 +14,29 @@
 class containers
 {
 protected:
+	std::vector<int> sizes;
 	std::vector<int> randomElements;
 
-	std::set<int> mySet;
-	std::list<int> myList;
-	std::vector<int> myVector;
+	std::set<int> testSet;
+	std::list<int> testList;
+	std::vector<int> testVector;
 
+	std::vector<std::vector<double>> times;
+
+	std::chrono::steady_clock::time_point begin;
+	std::chrono::steady_clock::time_point end;
+
+	void printTimes();
 public:
 	containers();
 
 	template <typename T>
 	void generateAccessNumbers(int numNumbers, T container);
-	void setRandomNumbers(const std::vector<int>& nums);
-	static void printTimes(const std::vector<double>& times);
+	void setContainerListSize(const std::vector<int>& nums);
+	
 
 	// Override these in their appropriate classes
-	virtual void testInsertChronological() = 0;
+	virtual void testInsertChronologicalNumbers() = 0;
 	virtual void testInsertRandom() = 0;
 	virtual void testAccessRandom() = 0;
 

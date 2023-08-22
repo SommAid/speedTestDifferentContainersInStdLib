@@ -37,8 +37,8 @@ public:
 
 	// Override these in their appropriate classes
 	virtual void testInsertChronologicalNumbers() = 0;
-	virtual void testInsertRandom() = 0;
-	virtual void testAccessRandom() = 0;
+	virtual void testInsertRandomNumbers() = 0;
+	virtual void testAccessRandomPositions() = 0;
 
 
 };

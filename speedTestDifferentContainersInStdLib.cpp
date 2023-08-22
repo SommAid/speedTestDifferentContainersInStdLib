@@ -3,6 +3,7 @@
 // IO related
 
 #include "containers.h"
+#include "myList.h"
 
 // std lib data strucutres
 //#include <flat_set> //Note: requires (c++23)
@@ -33,7 +34,10 @@ int main() {
     double micro;
     double nano;
 
+    myList test;
+    test.testAccessRandomPositions();
     testAccessRandomNumbers();
+
 }
 
 static void printTimes(const std::vector<double>& times) {

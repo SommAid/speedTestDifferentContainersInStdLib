@@ -1,7 +1,7 @@
 #include "containers.h"
 
 containers::containers()  {
-    srand(time(0));
+    srand(1);
     sizes = { 2, 8, 64, 256, 1024, 4096, 16384, 65536 };
 }
 

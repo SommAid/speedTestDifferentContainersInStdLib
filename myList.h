@@ -4,7 +4,7 @@
 class myList : protected containers{
 public:
 	void testInsertChronologicalNumbers();
-    void testInsertRandom();
-    void testAccessRandom();
+    void testInsertRandomNumbers();
+    void testAccessRandomPositions();
 };
 

@@ -15,11 +15,6 @@ class containers
 {
 protected:
 	std::vector<int> sizes;
-	std::vector<int> randomElements;
-
-	std::set<int> testSet;
-	std::list<int> testList;
-	std::vector<int> testVector;
 
 	std::vector<std::vector<double>> times;
 
@@ -28,12 +23,7 @@ protected:
 
 	void printTimes();
 public:
-	containers();
-
-	template <typename T>
-	void generateAccessNumbers(int numNumbers, T container);
-	void setContainerListSize(const std::vector<int>& nums);
-	
+	containers();	
 
 	// Override these in their appropriate classes
 	virtual void testInsertChronologicalNumbers() = 0;

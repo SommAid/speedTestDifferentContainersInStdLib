@@ -1,11 +1,11 @@
 #pragma once
 #include "containers.h"
 
-class myList : protected containers{
+class mySet : protected containers{
 private:
-    std::list<int> testList;
+    std::set<int> testSet;
 public:
-	void testInsertChronologicalNumbers();
+    void testInsertChronologicalNumbers();
     void testInsertRandomNumbers();
     void testAccessRandomPositions();
 };

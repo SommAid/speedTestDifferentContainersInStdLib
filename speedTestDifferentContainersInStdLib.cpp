@@ -4,6 +4,7 @@
 
 #include "containers.h"
 #include "myList.h"
+#include "mySet.h"
 
 // std lib data strucutres
 //#include <flat_set> //Note: requires (c++23)
@@ -34,7 +35,7 @@ int main() {
     double micro;
     double nano;
 
-    myList test;
+    mySet test;
     test.testAccessRandomPositions();
     testAccessRandomNumbers();
 
@@ -109,7 +110,6 @@ static void testInsertRandomNumbers()
         numEle = 0;
         {
             std::set<int> mySet;
-            std::list<int> myList;
             begin = std::chrono::steady_clock::now();
             for (const int& number : randomElements)
             {

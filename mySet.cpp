@@ -1,21 +1,19 @@
-#include "myList.h"
+#include "mySet.h"
 
 
 // Constructor just in case
 
-void myList::testInsertChronologicalNumbers()
+void mySet::testInsertChronologicalNumbers()
 {
     int start = 0, len;
     for (const auto& len : this->sizes) {
         begin = std::chrono::steady_clock::now();
-        std::list<int>::iterator iter;
         for (; start < len; start++)
         {
-            iter = this->testList.end();
-            this->testList.insert(iter, start);
+            this->testSet.insert(start);
         }
         end = std::chrono::steady_clock::now();
-        testList.clear();
+        testSet.clear();
         double milli = std::chrono::duration_cast<std::chrono::milliseconds> (end - begin).count();
         double micro = std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count();
         double nano = std::chrono::duration_cast<std::chrono::nanoseconds> (end - begin).count();
@@ -23,12 +21,12 @@ void myList::testInsertChronologicalNumbers()
         start = 0;
     }
     std::cout << "Insertion with ordered Elements\n";
-    std::cout << "List::Insertion\n";
+    std::cout << "Set::Insertion\n";
     std::cout << "Number of Elements: Milliseconds || Microseconds || Nanoseconds ||\n";
     printTimes();
 }
 
-void myList::testInsertRandomNumbers()
+void mySet::testInsertRandomNumbers()
 {
     int start = 0, len;
     for (const auto& len : this->sizes) {
@@ -37,27 +35,25 @@ void myList::testInsertRandomNumbers()
             randomNumbers.emplace_back(rand());
         }
         begin = std::chrono::steady_clock::now();
-        std::list<int>::iterator iter;
         for (const int& randNumber : randomNumbers)
         {
-            iter = this->testList.end();
-            this->testList.insert(iter, randNumber);
+            this->testSet.insert(randNumber);
         }
         end = std::chrono::steady_clock::now();
-        testList.clear();
+        testSet.clear();
         double milli = std::chrono::duration_cast<std::chrono::milliseconds> (end - begin).count();
         double micro = std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count();
         double nano = std::chrono::duration_cast<std::chrono::nanoseconds> (end - begin).count();
         this->times.push_back({ milli, micro, nano });
         start = 0;
     }
-    std::cout << "Insertion with Random Elements\n";
-    std::cout << "List::Insertion\n";
+    std::cout << "Insertion with ordered Elements\n";
+    std::cout << "Set::Insertion\n";
     std::cout << "Number of Elements: Milliseconds || Microseconds || Nanoseconds ||\n";
     printTimes();
 }
 
-void myList::testAccessRandomPositions()
+void mySet::testAccessRandomPositions()
 {
     int* hold = new int();
     for (const auto& len : this->sizes) {
@@ -69,19 +65,18 @@ void myList::testAccessRandomPositions()
                 randPos = len - 1;
             randomPositions.emplace_back(randPos);
         }
-        // Test list insertion
+        // Test set insertion
         {
-            std::list<int>::iterator iter;
+            std::set<int>::iterator iter;
             for (int start = 0; start < len; start++)
             {
-                iter = testList.end();
-                testList.insert(iter, start);
+                testSet.insert(start);
             }
 
             begin = std::chrono::steady_clock::now();
             for (const int& i : randomPositions)
             {
-                iter = testList.begin();
+                iter = testSet.begin();
                 std::advance(iter, i);
                 *hold = *iter;
             }
@@ -90,11 +85,10 @@ void myList::testAccessRandomPositions()
             double micro = std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count();
             double nano = std::chrono::duration_cast<std::chrono::nanoseconds> (end - begin).count();
             this->times.push_back({ milli, micro, nano });
-            testList.clear();
         }
     }
-    std::cout << "Accessing random Elements\n";
-    std::cout << "List::Accessing\n";
+    std::cout << "Insertion with ordered Elements\n";
+    std::cout << "Set::Insertion\n";
     std::cout << "Number of Elements: Milliseconds || Microseconds || Nanoseconds ||\n";
     printTimes();
     delete(hold);

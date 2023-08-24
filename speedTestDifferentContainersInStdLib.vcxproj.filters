@@ -27,6 +27,9 @@
     <ClCompile Include="mySet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="myVector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="containers.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mySet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="myVector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

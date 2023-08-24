@@ -5,6 +5,7 @@
 #include "containers.h"
 #include "myList.h"
 #include "mySet.h"
+#include "myVector.h"
 
 // std lib data strucutres
 //#include <flat_set> //Note: requires (c++23)
@@ -20,7 +21,7 @@ static std::mt19937 gen(rd());
 int main() {
 
     // use as reference delete at end
-    std::vector<int> numElements{ 2, 4, 8, 16, 64, 256, 512, 1024, 2048, 4096, 65536 };
+    std::vector<int> numElements{ 2, 8, 64, 256, 1024, 4096, 16384, 65536 };
 
     std::chrono::steady_clock::time_point begin;
     std::chrono::steady_clock::time_point end;
@@ -35,7 +36,7 @@ int main() {
     double micro;
     double nano;
 
-    mySet test;
+    myVector test;
     test.testAccessRandomPositions();
     testAccessRandomNumbers();
 
@@ -63,7 +64,7 @@ static void printTimes(const std::vector<double>& times) {
 
 static void testInsertRandomNumbers()
 {
-    std::vector<int> numElements{ 2, 4, 8, 16, 64, 256, 512, 1024, 2048, 4096, 65536 };
+    std::vector<int> numElements{ 2, 8, 64, 256, 1024, 4096, 16384, 65536 };
 
     std::chrono::steady_clock::time_point begin;
     std::chrono::steady_clock::time_point end;
@@ -176,7 +177,7 @@ static void testInsertRandomNumbers()
 
 static void testInsertOrderedNumbers()
 {
-    std::vector<int> numElements{ 2, 4, 8, 16, 64, 256, 512, 1024, 2048, 4096, 65536 };
+    std::vector<int> numElements{ 2, 8, 64, 256, 1024, 4096, 16384, 65536 };;
 
     std::chrono::steady_clock::time_point begin;
     std::chrono::steady_clock::time_point end;
@@ -281,7 +282,7 @@ static void testInsertOrderedNumbers()
 }
 
 static void testAccessRandomNumbers() {
-    std::vector<int> numElements{ 2, 4, 8, 16, 64, 256, 512, 1024, 2048, 4096, 65536 };
+    std::vector<int> numElements{ 2, 8, 64, 256, 1024, 4096, 16384, 65536 };;
 
     std::chrono::steady_clock::time_point begin;
     std::chrono::steady_clock::time_point end;

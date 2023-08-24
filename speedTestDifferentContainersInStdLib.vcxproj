@@ -130,12 +130,14 @@
     <ClCompile Include="containers.cpp" />
     <ClCompile Include="myList.cpp" />
     <ClCompile Include="mySet.cpp" />
+    <ClCompile Include="myVector.cpp" />
     <ClCompile Include="speedTestDifferentContainersInStdLib.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="containers.h" />
     <ClInclude Include="myList.h" />
     <ClInclude Include="mySet.h" />
+    <ClInclude Include="myVector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
